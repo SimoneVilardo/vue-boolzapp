@@ -18,16 +18,76 @@
     <div id="app">
         <div class="container">
             <div class="row ">
-                <div class="col-4 p-0 bg-primary">
-                    <div class="nome bg-secondary"></div>
-                    <div class="notifiche bg-success"></div>
-                    <div class="ricerca bg-warning"></div>
-                    <div class="contatti bg-info"></div>
+                <div class="col-4 p-0">
+                    <!-- div con immagine e nome del proprietario -->
+                    <div class="color d-flex justify-content-between">
+                        <div class="avatar">
+                            <img class="rounded-circle dimension" src="./img/avatar_io.jpg" alt="avatar_io">
+                            <span class="name_avatar">Sofia</span>
+                        </div>
+                        <div class="icon d-flex align-items-center justify-content-around ">
+                            <i class="fas fa-circle-notch"></i>
+                            <i class="fas fa-message mx-2"></i>
+                            <i class="fas fa-ellipsis-vertical"></i>
+                        </div>
+                    </div>
+                    <!-- div notifiche -->
+                    <div class="notifiche d-flex">
+                        <i class="fas fa-bell-slash bell rounded-circle"></i>
+                        <div>
+                            <span class="name_avatar">Ricevi notifiche di nuovi messaggi</span><br>
+                            <a href="#">Attiva notifiche desktop</a>
+                        </div>
+                    </div>
+                    <!-- barra di ricerca -->
+                    <div class="ricerca">
+                        <div class="form-group has-search">
+                            <span class="fa fa-search form-control-feedback"></span>
+                            <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat">
+                          </div>
+                    </div>
+                    <!-- contatti -->
+                    <div class="overflow">
+                        <div class="bg-white d-flex justify-content-between" v-for="contact in contacts">
+                            <div class="avatar d-flex">
+                                <img class="rounded-circle dimension" :src="contact.avatar" alt="avatar_1">
+                                <div class="mt-2">
+                                    <span class="name_avatar">{{ contact.name }}</span><br>
+                                    <span class="last_access">Ultimo messaggio inviato</span>
+                                </div>
+                            </div>
+                            <div class="time">
+                                <span>12:00</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-8 p-0">
-                    <div class="nome bg-secondary"></div>
-                    <div class="chat"></div>
-                    <div class="testo bg-danger"></div>
+                    <!-- utente -->
+                    <div class="color d-flex justify-content-between">
+                        <div class="avatar d-flex">
+                            <img class="rounded-circle dimension" src="./img/avatar_1.jpg" alt="avatar_1">
+                            <div class="mt-2">
+                                <span class="name_avatar">Michele</span><br>
+                                <span class="last_access">Ultimo accesso oggi alle 12:00</span>
+                            </div>
+                        </div>
+                        <div class="icon d-flex align-items-center justify-content-around ">
+                            <i class="fas fa-magnifying-glass"></i>
+                            <i class="fas fa-paperclip mx-3"></i>
+                            <i class="fas fa-ellipsis-vertical"></i>
+                        </div>
+                    </div>
+                    <!-- chat -->
+                    <div class="chat">
+                        <div class=""></div>
+                    </div>
+                    <!-- div per inserimento testo -->
+                    <div class="testo d-flex justify-content-around align-items-center p-2">
+                        <i class="fa-regular fa-face-smile ms-2"></i>
+                        <input type="text" class="form-control p-2" placeholder="Scrivi un messaggio">
+                        <i class="fas fa-microphone col-auto me-2"></i>
+                    </div>
                 </div>
             </div>
         </div>
