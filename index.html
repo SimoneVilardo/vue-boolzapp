@@ -79,15 +79,16 @@
                         </div>
                     </div>
                     <!-- chat -->
-                    <div v-if="contacts" class="chat">
-                        <div v-for="(message, index) in contacts[attivaImmagine].messages" :key="index" class="messaggio" :class="{'received': message.status === 'received', 'sent': message.status === 'sent'}">
+                    <div class="chat">
+                        <div v-for="(message, index) in contacts[attivaImmagine].messages" :class="{'received': message.status === 'received', 'sent': message.status === 'sent'}">
                             <div>{{ message.message }}</div>
+                            <div class="last_access time-message">15:30</div>
                         </div>
                     </div>
                     <!-- div per inserimento testo -->
                     <div class="testo d-flex justify-content-around align-items-center p-2">
                         <i class="fa-regular fa-face-smile ms-2"></i>
-                        <input type="text" class="form-control p-2" placeholder="Scrivi un messaggio">
+                        <input type="text" class="form-control p-2" placeholder="Scrivi un messaggio" v-model="newTask" @keyup.enter="aggiungiTask">
                         <i class="fas fa-microphone col-auto me-2"></i>
                     </div>
                 </div>

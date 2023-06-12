@@ -3,6 +3,7 @@ const { createApp } = Vue;
 createApp({
     data(){
         return{
+            newTask:'',
             // array dei contatti
             contacts: [
                 {
@@ -174,6 +175,23 @@ createApp({
          // Funzione per cambiare l'immagine attiva in base all'indice passato come parametro
          cambiaImmagine(index){
             this.attivaImmagine = index;
+        },
+        
+        aggiungiTask(){
+            let obj = {
+                date:'',
+                message: this.newTask,
+                status: 'sent'
+            }
+
+            this.contacts[this.attivaImmagine].messages.push(obj);
+
+            this.newTask = '';
+
+            setTimeout(() =>{
+
+            }, 1000)
         }
+
     },
 }).mount('#app')

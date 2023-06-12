@@ -132,7 +132,7 @@ i{
 .sent , .received{
     display: flex;
     margin: 10px 0;
-    font-size: 15px;
+    font-size: 17px;
     padding: 5px 12px;
     margin: 7px 50px;
     border-radius: 5px;
@@ -147,5 +147,9 @@ i{
 .received{
     background-color: #fff;
     align-self: flex-start;
+}
+
+.time-message{
+    margin: 15px 3px 0 50px;
 }
 
