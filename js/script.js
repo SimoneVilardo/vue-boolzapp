@@ -166,7 +166,14 @@ createApp({
                         }
                     ],
                 }
-            ]
+            ],
+            attivaImmagine : 0  
         }
-    }
+    },
+    methods: {
+         // Funzione per cambiare l'immagine attiva in base all'indice passato come parametro
+         cambiaImmagine(index){
+            this.attivaImmagine = index;
+        }
+    },
 }).mount('#app')

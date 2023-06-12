@@ -54,11 +54,6 @@ body{
     height: calc(100% - 180px);
     background-color: white;
 }
-.chat{
-    width: 100%;
-    height: calc(100% - 127px);
-    background-image: url(../img/mine.jpg);
-}
 
 
 .dimension{
@@ -121,3 +116,36 @@ i{
     height: calc(100% - 183px);
     overflow-y: auto;
 }
+
+/* messaggi */
+
+.chat{
+    height: calc(100% - 127px);
+    background-image: url(../img/mine.jpg);
+    padding: 10px 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.sent , .received{
+    display: flex;
+    margin: 10px 0;
+    font-size: 15px;
+    padding: 5px 12px;
+    margin: 7px 50px;
+    border-radius: 5px;
+}
+.sent{
+    background-color: #d5f9ba;
+    align-self: flex-end;
+}
+
+
+
+.received{
+    background-color: #fff;
+    align-self: flex-start;
+}
+

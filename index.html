@@ -48,7 +48,7 @@
                     </div>
                     <!-- contatti -->
                     <div class="overflow">
-                        <div class="bg-white d-flex justify-content-between" v-for="contact in contacts">
+                        <div class="bg-white d-flex justify-content-between" v-for="(contact,index) in contacts"  @click="cambiaImmagine(index)">
                             <div class="avatar d-flex">
                                 <img class="rounded-circle dimension" :src="contact.avatar" alt="avatar_1">
                                 <div class="mt-2">
@@ -66,9 +66,9 @@
                     <!-- utente -->
                     <div class="color d-flex justify-content-between">
                         <div class="avatar d-flex">
-                            <img class="rounded-circle dimension" src="./img/avatar_1.jpg" alt="avatar_1">
+                            <img class="rounded-circle dimension" :src="contacts[attivaImmagine].avatar" alt="avatar_1">
                             <div class="mt-2">
-                                <span class="name_avatar">Michele</span><br>
+                                <span class="name_avatar">{{contacts[attivaImmagine].name}}</span><br>
                                 <span class="last_access">Ultimo accesso oggi alle 12:00</span>
                             </div>
                         </div>
@@ -79,8 +79,10 @@
                         </div>
                     </div>
                     <!-- chat -->
-                    <div class="chat">
-                        <div class=""></div>
+                    <div v-if="contacts" class="chat">
+                        <div v-for="(message, index) in contacts[attivaImmagine].messages" :key="index" class="messaggio" :class="{'received': message.status === 'received', 'sent': message.status === 'sent'}">
+                            <div>{{ message.message }}</div>
+                        </div>
                     </div>
                     <!-- div per inserimento testo -->
                     <div class="testo d-flex justify-content-around align-items-center p-2">
