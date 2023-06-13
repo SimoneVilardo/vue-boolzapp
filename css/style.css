@@ -51,7 +51,7 @@ body{
 
 .contatti{
     width: 100%;
-    height: calc(100% - 180px);
+    height: calc(100% - 183px);
     background-color: white;
     overflow-y: auto;
 }
