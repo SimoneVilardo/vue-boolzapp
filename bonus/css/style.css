@@ -115,6 +115,7 @@ i{
 
 .bord{
     border-bottom: 1px solid lightgray;
+    cursor: pointer;
 }
 
 .bord:hover{
@@ -137,10 +138,11 @@ i{
 .sent , .received{
     margin: 10px 0;
     font-size: 17px;
-    padding: 5px 30px 5px 12px;
+    padding: 10px 100px 10px 12px;
     margin: 7px 50px;
     border-radius: 5px;
     position: relative;
+    cursor: pointer;
 }
 .sent{
     background-color: #d5f9ba;
@@ -163,8 +165,14 @@ i{
 }
 
 
-/* ricerca contatto */
+.position{
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-bottom: 15px;
+    display: none;
+}
 
-.contatto-no{
-    display: none !important;
+.block:hover .position{
+    display: block;
 }

@@ -10,6 +10,8 @@ createApp({
                 {
                     name: 'Michele',
                     avatar: './img/avatar_1.jpg',
+                    access: new Date().toLocaleDateString(),
+                    time: new Date().toLocaleTimeString(),
                     visible: true,
                     messages: [
                         {
@@ -32,6 +34,8 @@ createApp({
                 {
                     name: 'Fabio',
                     avatar: './img/avatar_2.jpg',
+                    access: new Date().toLocaleDateString(),
+                    time: new Date().toLocaleTimeString(),
                     visible: true,
                     messages: [
                         {
@@ -54,6 +58,8 @@ createApp({
                 {
                     name: 'Samuele',
                     avatar: './img/avatar_3.jpg',
+                    access: new Date().toLocaleDateString(),
+                    time: new Date().toLocaleTimeString(),
                     visible: true,
                     messages: [
                         {
@@ -76,6 +82,8 @@ createApp({
                 {
                     name: 'Alessandro B.',
                     avatar: './img/avatar_4.jpg',
+                    access: new Date().toLocaleDateString(),
+                    time: new Date().toLocaleTimeString(),
                     visible: true,
                     messages: [
                         {
@@ -93,6 +101,8 @@ createApp({
                 {
                     name: 'Alessandro L.',
                     avatar: './img/avatar_5.jpg',
+                    access: new Date().toLocaleDateString(),
+                    time: new Date().toLocaleTimeString(),
                     visible: true,
                     messages: [
                         {
@@ -110,6 +120,8 @@ createApp({
                 {
                     name: 'Claudia',
                     avatar: './img/avatar_5.jpg',
+                    access: new Date().toLocaleDateString(),
+                    time: new Date().toLocaleTimeString(),
                     visible: true,
                     messages: [
                         {
@@ -132,6 +144,8 @@ createApp({
                 {
                     name: 'Federico',
                     avatar: './img/avatar_7.jpg',
+                    access: new Date().toLocaleDateString(),
+                    time: new Date().toLocaleTimeString(),
                     visible: true,
                     messages: [
                         {
@@ -149,6 +163,8 @@ createApp({
                 {
                     name: 'Davide',
                     avatar: './img/avatar_8.jpg',
+                    access: new Date().toLocaleDateString(),
+                    time: new Date().toLocaleTimeString(),
                     visible: true,
                     messages: [
                         {
@@ -180,7 +196,7 @@ createApp({
         
         aggiungiTask(){
             let obj = {
-                date:'',
+                date:new Date().toLocaleDateString() + ' ' + new Date().toLocaleTimeString(),
                 message: this.newTask,
                 status: 'sent'
             }
@@ -190,7 +206,7 @@ createApp({
             this.newTask = '';
 
             new_obj ={
-                date:'',
+                date:new Date().toLocaleDateString()+ ' ' + new Date().toLocaleTimeString(),
                 message:'ok',
                 status: 'received'
             }
@@ -206,6 +222,10 @@ createApp({
                 let contactName = contact.name.toLowerCase();
                 contact.visible = contactName.includes(nomeRicercato);
             });
+        },
+
+        eliminaMessaggio(index){
+            this.contacts[this.attivaImmagine].messages.splice(index, 1)
         }
 
     },

@@ -53,11 +53,11 @@
                                 <img class="rounded-circle dimension" :src="contact.avatar" alt="avatar_1">
                                 <div class="mt-2">
                                     <span class="name_avatar">{{ contact.name }}</span><br>
-                                    <span class="last_access">Ultimo messaggio inviato</span>
+                                    <span class="last_access">Ultimo messaggio {{contact.access}}</span>
                                 </div>
                             </div>
                             <div class="time">
-                                <span>12:00</span>
+                                <span>{{contact.time}}</span>
                             </div>
                         </div>
                     </div>
@@ -69,7 +69,7 @@
                             <img class="rounded-circle dimension" :src="contacts[attivaImmagine].avatar" alt="avatar_1">
                             <div class="mt-2">
                                 <span class="name_avatar">{{contacts[attivaImmagine].name}}</span><br>
-                                <span class="last_access">Ultimo accesso oggi alle 12:00</span>
+                                <span class="last_access">Ultimo accesso oggi {{contacts[attivaImmagine].access}}</span>
                             </div>
                         </div>
                         <div class="icon d-flex align-items-center justify-content-around ">
@@ -80,9 +80,17 @@
                     </div>
                     <!-- chat -->
                     <div class="chat">
-                        <div v-for="(message, index) in contacts[attivaImmagine].messages" :class="{'received': message.status === 'received', 'sent': message.status === 'sent'}">
+                        <div class="block" v-for="(message, index) in contacts[attivaImmagine].messages" :class="{'received': message.status === 'received', 'sent': message.status === 'sent'}">
                             <div>{{ message.message }}</div>
-                            <div class="time time-message">15:30</div>
+                            <div class="time time-message">{{ contacts[attivaImmagine].messages[index].date }}</div>
+                            <div class="btn-group position">
+                                <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-start dropdown-menu-lg-end">
+                                    <li><button class="dropdown-item" type="button">Info messaggio</button></li>
+                                    <li><button class="dropdown-item" type="button" @click="eliminaMessaggio(index)">Elimina messaggio</button></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                     <!-- div per inserimento testo -->
