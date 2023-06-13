@@ -125,6 +125,7 @@ i{
     padding: 10px 40px;
     display: flex;
     flex-direction: column;
+    overflow-y: auto;
 }
 
 

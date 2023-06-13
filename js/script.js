@@ -188,8 +188,14 @@ createApp({
 
             this.newTask = '';
 
-            setTimeout(() =>{
+            new_obj ={
+                date:'',
+                message:'ok',
+                status: 'received'
+            }
 
+            setTimeout(() =>{
+                this.contacts[this.attivaImmagine].messages.push(new_obj)
             }, 1000)
         }
 
