@@ -117,6 +117,10 @@ i{
     border-bottom: 1px solid lightgray;
 }
 
+.bord:hover{
+    background-color: lightgray !important;
+}
+
 /* messaggi */
 
 .chat{
@@ -131,16 +135,18 @@ i{
 
 
 .sent , .received{
-    display: flex;
     margin: 10px 0;
     font-size: 17px;
-    padding: 5px 12px;
+    padding: 5px 30px 5px 12px;
     margin: 7px 50px;
     border-radius: 5px;
+    position: relative;
 }
 .sent{
     background-color: #d5f9ba;
     align-self: flex-end;
+    word-wrap: break-word;
+    word-break: break-all;
 }
 
 
@@ -151,7 +157,9 @@ i{
 }
 
 .time-message{
-    margin: 15px 3px 0 50px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
 }
 
 

@@ -116,6 +116,10 @@ i{
 .bord{
     border-bottom: 1px solid lightgray;
 }
+.bord:hover{
+    background-color: lightgray !important;
+}
+
 
 /* messaggi */
 
