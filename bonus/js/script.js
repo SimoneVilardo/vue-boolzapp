@@ -196,7 +196,7 @@ createApp({
         
         aggiungiTask(){
             let obj = {
-                date:new Date().toLocaleDateString() + ' ' + new Date().toLocaleTimeString(),
+                date:'',
                 message: this.newTask,
                 status: 'sent'
             }
@@ -226,6 +226,15 @@ createApp({
 
         eliminaMessaggio(index){
             this.contacts[this.attivaImmagine].messages.splice(index, 1)
+        },
+
+        getLastMessage(contact) {
+            const messages = contact.messages;
+            if (messages.length > 0) {
+                const lastMessage = messages[messages.length - 1];
+                return lastMessage.message;
+            }
+            return '';
         }
 
     },
