@@ -121,6 +121,11 @@ i{
 .bord:hover{
     background-color: lightgray !important;
 }
+/* ricerca contatto */
+
+.contatto-no{
+    display: none !important;
+}
 
 /* messaggi */
 
