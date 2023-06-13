@@ -196,7 +196,7 @@ createApp({
         
         aggiungiTask(){
             let obj = {
-                date:'',
+                date:new Date().toLocaleDateString()+ ' ' + new Date().toLocaleTimeString(),
                 message: this.newTask,
                 status: 'sent'
             }
