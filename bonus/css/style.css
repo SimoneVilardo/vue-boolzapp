@@ -27,10 +27,10 @@ body{
 
 .col-4, .col-8{
     height: 95vh;
+    background-color: #eaeaea;
 }
 
 .color{
-    background-color: #eaeaea;
     border-right: 2px solid #b1b1b1;
 }
 
