@@ -181,3 +181,8 @@ i{
 .block:hover .position{
     display: block;
 }
+
+
+.bord-color{
+    border-left: 2px solid #b1b1b1;
+}
