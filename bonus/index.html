@@ -69,7 +69,7 @@
                             <img class="rounded-circle dimension" :src="contacts[attivaImmagine].avatar" alt="avatar_1">
                             <div class="mt-2">
                                 <span class="name_avatar">{{contacts[attivaImmagine].name}}</span><br>
-                                <span class="last_access">Ultimo accesso oggi alle {{contacts[attivaImmagine].time}}</span>
+                                <span class="last_access">Ultimo accesso oggi alle {{contacts[attivaImmagine].time.slice(0, 5)}}</span>
                             </div>
                         </div>
                         <div class="icon d-flex align-items-center justify-content-around ">
@@ -82,7 +82,7 @@
                     <div class="chat">
                         <div class="block" v-for="(message, index) in contacts[attivaImmagine].messages" :class="{'received': message.status === 'received', 'sent': message.status === 'sent'}">
                             <div>{{ message.message }}</div>
-                            <div class="time time-message">{{ contacts[attivaImmagine].messages[index].date }}</div>
+                            <div class="time time-message">{{ contacts[attivaImmagine].messages[index].date.slice(10, 15) }}</div>
                             <div class="btn-group position">
                                 <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
                                 </button>
