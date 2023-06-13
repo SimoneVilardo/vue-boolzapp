@@ -4,6 +4,7 @@ createApp({
     data(){
         return{
             newTask:'',
+            cercaParola:'',
             // array dei contatti
             contacts: [
                 {
@@ -197,6 +198,14 @@ createApp({
             setTimeout(() =>{
                 this.contacts[this.attivaImmagine].messages.push(new_obj)
             }, 1000)
+        },
+
+        ricercaParola(){
+            let nomeRicercato = this.cercaParola.toLowerCase();
+            this.contacts.forEach((contact) => {
+                let contactName = contact.name.toLowerCase();
+                contact.visible = contactName.includes(nomeRicercato);
+            });
         }
 
     },

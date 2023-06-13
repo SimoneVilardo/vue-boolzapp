@@ -43,12 +43,12 @@
                     <div class="ricerca">
                         <div class="form-group has-search">
                             <span class="fa fa-search form-control-feedback"></span>
-                            <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat">
+                            <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" v-model="cercaParola" @input="ricercaParola">
                           </div>
                     </div>
                     <!-- contatti -->
-                    <div class="overflow">
-                        <div class="bg-white d-flex justify-content-between" v-for="(contact,index) in contacts"  @click="cambiaImmagine(index)">
+                    <div class="contatti">
+                        <div class="bg-white bord d-flex justify-content-between" v-for="(contact,index) in contacts"  @click="cambiaImmagine(index)" :class="contact.visible ? '' : 'contatto-no'">
                             <div class="avatar d-flex">
                                 <img class="rounded-circle dimension" :src="contact.avatar" alt="avatar_1">
                                 <div class="mt-2">
@@ -82,7 +82,7 @@
                     <div class="chat">
                         <div v-for="(message, index) in contacts[attivaImmagine].messages" :class="{'received': message.status === 'received', 'sent': message.status === 'sent'}">
                             <div>{{ message.message }}</div>
-                            <div class="last_access time-message">15:30</div>
+                            <div class="time time-message">15:30</div>
                         </div>
                     </div>
                     <!-- div per inserimento testo -->

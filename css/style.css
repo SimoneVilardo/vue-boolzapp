@@ -53,6 +53,7 @@ body{
     width: 100%;
     height: calc(100% - 180px);
     background-color: white;
+    overflow-y: auto;
 }
 
 
@@ -104,7 +105,7 @@ i{
 
 .time{
     padding: 3px;
-    font-size: 11px;
+    font-size: 9px;
     color: #b1b1b1;
 }
 
@@ -112,9 +113,8 @@ i{
     background-color: #eaeaea;
 }
 
-.overflow{
-    height: calc(100% - 183px);
-    overflow-y: auto;
+.bord{
+    border-bottom: 1px solid lightgray;
 }
 
 /* messaggi */
@@ -154,3 +154,9 @@ i{
     margin: 15px 3px 0 50px;
 }
 
+
+/* ricerca contatto */
+
+.contatto-no{
+    display: none !important;
+}
