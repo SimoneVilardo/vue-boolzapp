@@ -10,7 +10,6 @@ createApp({
                 {
                     name: 'Michele',
                     avatar: './img/avatar_1.jpg',
-                    time: new Date().toLocaleTimeString(),
                     visible: true,
                     messages: [
                         {
@@ -33,7 +32,6 @@ createApp({
                 {
                     name: 'Fabio',
                     avatar: './img/avatar_2.jpg',
-                    time: new Date().toLocaleTimeString(),
                     visible: true,
                     messages: [
                         {
@@ -56,7 +54,6 @@ createApp({
                 {
                     name: 'Samuele',
                     avatar: './img/avatar_3.jpg',
-                    time: new Date().toLocaleTimeString(),
                     visible: true,
                     messages: [
                         {
@@ -79,7 +76,6 @@ createApp({
                 {
                     name: 'Alessandro B.',
                     avatar: './img/avatar_4.jpg',
-                    time: new Date().toLocaleTimeString(),
                     visible: true,
                     messages: [
                         {
@@ -97,7 +93,6 @@ createApp({
                 {
                     name: 'Alessandro L.',
                     avatar: './img/avatar_5.jpg',
-                    time: new Date().toLocaleTimeString(),
                     visible: true,
                     messages: [
                         {
@@ -115,7 +110,6 @@ createApp({
                 {
                     name: 'Claudia',
                     avatar: './img/avatar_5.jpg',
-                    time: new Date().toLocaleTimeString(),
                     visible: true,
                     messages: [
                         {
@@ -138,7 +132,6 @@ createApp({
                 {
                     name: 'Federico',
                     avatar: './img/avatar_7.jpg',
-                    time: new Date().toLocaleTimeString(),
                     visible: true,
                     messages: [
                         {
@@ -156,7 +149,6 @@ createApp({
                 {
                     name: 'Davide',
                     avatar: './img/avatar_8.jpg',
-                    time: new Date().toLocaleTimeString(),
                     visible: true,
                     messages: [
                         {
@@ -239,7 +231,7 @@ createApp({
             return '';
         },
 
-        getTimeLogin(index) {
+        getTimeLogin() {
             let messages = this.contacts[this.attivaImmagine].messages;
             if (messages.length > 0) {
               let time_login = messages[messages.length - 1];
