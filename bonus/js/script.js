@@ -10,7 +10,6 @@ createApp({
                 {
                     name: 'Michele',
                     avatar: './img/avatar_1.jpg',
-                    access: new Date().toLocaleDateString(),
                     time: new Date().toLocaleTimeString(),
                     visible: true,
                     messages: [
@@ -34,7 +33,6 @@ createApp({
                 {
                     name: 'Fabio',
                     avatar: './img/avatar_2.jpg',
-                    access: new Date().toLocaleDateString(),
                     time: new Date().toLocaleTimeString(),
                     visible: true,
                     messages: [
@@ -58,7 +56,6 @@ createApp({
                 {
                     name: 'Samuele',
                     avatar: './img/avatar_3.jpg',
-                    access: new Date().toLocaleDateString(),
                     time: new Date().toLocaleTimeString(),
                     visible: true,
                     messages: [
@@ -82,7 +79,6 @@ createApp({
                 {
                     name: 'Alessandro B.',
                     avatar: './img/avatar_4.jpg',
-                    access: new Date().toLocaleDateString(),
                     time: new Date().toLocaleTimeString(),
                     visible: true,
                     messages: [
@@ -101,7 +97,6 @@ createApp({
                 {
                     name: 'Alessandro L.',
                     avatar: './img/avatar_5.jpg',
-                    access: new Date().toLocaleDateString(),
                     time: new Date().toLocaleTimeString(),
                     visible: true,
                     messages: [
@@ -120,7 +115,6 @@ createApp({
                 {
                     name: 'Claudia',
                     avatar: './img/avatar_5.jpg',
-                    access: new Date().toLocaleDateString(),
                     time: new Date().toLocaleTimeString(),
                     visible: true,
                     messages: [
@@ -144,7 +138,6 @@ createApp({
                 {
                     name: 'Federico',
                     avatar: './img/avatar_7.jpg',
-                    access: new Date().toLocaleDateString(),
                     time: new Date().toLocaleTimeString(),
                     visible: true,
                     messages: [
@@ -163,7 +156,6 @@ createApp({
                 {
                     name: 'Davide',
                     avatar: './img/avatar_8.jpg',
-                    access: new Date().toLocaleDateString(),
                     time: new Date().toLocaleTimeString(),
                     visible: true,
                     messages: [
@@ -195,25 +187,26 @@ createApp({
         },
         
         aggiungiTask(){
-            let obj = {
-                date:new Date().toLocaleDateString() + ' ' + new Date().toLocaleTimeString(),
-                message: this.newTask,
-                status: 'sent'
+            if (this.newTask.trim() !== ''){
+                this.contacts[this.attivaImmagine].messages.push({
+                    date:new Date().toLocaleDateString() + ' ' + new Date().toLocaleTimeString(),
+                    message: this.newTask,
+                    status: 'sent'
+                });
+
+
+                this.newTask = '';
+
+
+                setTimeout(() =>{
+    
+                    this.contacts[this.attivaImmagine].messages.push({
+                        date:new Date().toLocaleDateString() + ' ' + new Date().toLocaleTimeString(),
+                        message: 'ok',
+                        status: 'received'
+                    });
+                }, 1000)
             }
-
-            this.contacts[this.attivaImmagine].messages.push(obj);
-
-            this.newTask = '';
-
-            new_obj ={
-                date:new Date().toLocaleDateString() + ' ' + new Date().toLocaleTimeString(),
-                message:'ok',
-                status: 'received'
-            }
-
-            setTimeout(() =>{
-                this.contacts[this.attivaImmagine].messages.push(new_obj)
-            }, 1000)
         },
 
         ricercaParola(){
@@ -235,7 +228,15 @@ createApp({
                 return lastMessage.message;
             }
             return '';
+        },
+        
+        getLastLogin(contact) {
+            let messages = contact.messages;
+            if (messages.length > 0) {
+              let last_login = messages[messages.length - 1];
+              return last_login.date.slice(0, 9);
+            }
+            return '';
         }
-
     },
 }).mount('#app')
