@@ -69,7 +69,7 @@
                             <img class="rounded-circle dimension" :src="contacts[attivaImmagine].avatar" alt="avatar_1">
                             <div class="mt-2">
                                 <span class="name_avatar">{{contacts[attivaImmagine].name}}</span><br>
-                                <span class="last_access">Ultimo accesso oggi alle {{contacts[attivaImmagine].time.slice(0, 5)}}</span>
+                                <span class="last_access">Ultimo accesso oggi alle {{getTimeLogin(index)}}</span>
                             </div>
                         </div>
                         <div class="icon d-flex align-items-center justify-content-around ">

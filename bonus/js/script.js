@@ -237,6 +237,15 @@ createApp({
               return last_login.date.slice(0, 9);
             }
             return '';
+        },
+
+        getTimeLogin(index) {
+            let messages = this.contacts[this.attivaImmagine].messages;
+            if (messages.length > 0) {
+              let time_login = messages[messages.length - 1];
+              return time_login.date.slice(10, 15);
+            }
+            return '';
         }
     },
 }).mount('#app')
