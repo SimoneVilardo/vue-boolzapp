@@ -189,7 +189,7 @@ createApp({
 
             this.newTask = '';
 
-            new_obj ={
+            let new_obj ={
                 date:'',
                 message:'ok',
                 status: 'received'
